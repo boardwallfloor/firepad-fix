@@ -32,6 +32,7 @@
   line-height: 82px;
   padding-left: 10px;
   border-bottom: 1px solid #c9c9c9;
+  background-color: white;
 
   /* Don't select text when double-clicking in toolbar */
   -webkit-touch-callout: none;

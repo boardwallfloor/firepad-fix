@@ -20,27 +20,113 @@
   
   <link rel="stylesheet" href="/css/user-style.css" />
 
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+  
   <style>
+    input[type=button] {
+    background-color: #FF6B6C;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
     html { height: 100%; }
-    body { margin: 0; height: 100%; }
+    body { margin: 0; height: 100%;
+      background-color: #FFC145;
+    }
     /* Height / width / positioning can be customized for your use case.
        For demo purposes, we make the user list 175px and firepad fill the rest of the page. */
     #userlist {
-      position: absolute; left: 0; top: 0; bottom: 0; height: auto;
-      width: 175px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    width: 175px;
+    background-color: #B8B8D1;
     }
     #firepad {
       position: absolute; left: 175px; top: 0; bottom: 0; right: 0; height: auto;
     }
+    .kontener {
+    
+    position: absolute;
+    left: 30px;
+    top: 80px;
+    right: 30px;
+    bottom: 125px;
+    background: white;
+    -moz-box-shadow: 0 5px 25px #333;
+    -webkit-box-shadow: 0 5px 25px #333;
+    box-shadow: 0 5px 25px #333;
+}
+    .judul {
+      margin-top: -40px;
+      margin-left: 30px;
+      color: #FFFFFB;
+      font-size: 50px;
+      font-family: 'Arial', cursive;
+    }
+    .description {
+      position: absolute;
+      bottom: 0px;
+      right: 40px;
+      width: 500px;
+      height: 80px;
+      font-size: 18px;
+      color: white;
+    }
+    #share-box{
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    width: 650px;
+    height: 56px;
+    }
+    #share-features {
+        height: 35px;
+    }
+
   </style>
 </head>
 
 <body onload="init()">
-
-  <div id="userlist"></div>
-  <div id="firepad"></div>
-  <button class="woy" onclick="getText()">Click me</button>
-  <!-- <script src="/js/firepad.js"></script> -->
+            <div class="judul">
+              <p>Notee</p>
+            </div>
+            <div class="kontener">
+              <div id="userlist"></div>
+              <div id="firepad"></div>
+            </div>
+          
+          <div id="share-box">
+          <div id="share-features">
+            <table class="copyUrl">
+              <tbody>
+              <tr>
+                <td>
+                    <input type="button" value="Edit With Friends" onclick="Copy();" />
+                </td>
+              </tr>
+                <tr>
+                <td>
+                  <div>
+                    <textarea id="url" rows="1" cols="30"></textarea>
+                  </div>
+                </td>
+                
+              </tr>
+              
+            </tbody></table>
+          </div>
+        </div>
+            <div class="description">Notee adalah web-based text editor yang berguna untuk menyimpan catatan dan berbagi secara real-time dengan orang lain.</div>
   <script>
     function init() {
       //// Initialize Firebase.
@@ -72,12 +158,10 @@
       var firepadUserList = FirepadUserList.fromDiv(firepadRef.child('users'),
           document.getElementById('userlist'), userId);
 
-      
-
       //// Initialize contents.
       firepad.on('ready', function() {
         if (firepad.isHistoryEmpty()) {
-          firepad.setText('Welcome to notee!');
+          firepad.setText('Catat..');
         }
       });
 
@@ -86,7 +170,6 @@
 
     // Helper to get hash from end of URL or generate a random one.
     function getExampleRef() {
-
       var ref = firebase.database().ref();
       var hash = window.location.hash.replace(/#/g, '');
       if (hash) {
@@ -100,22 +183,14 @@
       }
       return ref;
     }
+    function Copy() {
+    var Url = document.getElementById("url");
+    Url.innerHTML = window.location.href;
+    console.log(Url.innerHTML)
+    Url.select();
+    document.execCommand("copy");
+  }
 
-     function getText() {
-      init();
-        this.assertReady_('getText');
-      return this.richTextCodeMirror_.getText();
-    };
-
-    function assertReady_(funcName) {
-      if (!this.ready_) {
-        throw new Error('You must wait for the "ready" event before calling ' + funcName + '.');
-      }
-      if (this.zombie_) {
-        throw new Error('You can\'t use a Firepad after calling dispose()!  [called ' + funcName + ']');
-      }
-    };
-    
 
   </script>
   <script src="/js/user.js"></script>
