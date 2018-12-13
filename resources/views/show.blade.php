@@ -22,78 +22,7 @@
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
-  
-  <style>
-    input[type=button] {
-    background-color: #FF6B6C;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-    html { height: 100%; }
-    body { margin: 0; height: 100%;
-      background-color: #FFC145;
-    }
-    /* Height / width / positioning can be customized for your use case.
-       For demo purposes, we make the user list 175px and firepad fill the rest of the page. */
-    #userlist {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    height: auto;
-    width: 175px;
-    background-color: #B8B8D1;
-    }
-    #firepad {
-      position: absolute; left: 175px; top: 0; bottom: 0; right: 0; height: auto;
-    }
-    .kontener {
-    
-    position: absolute;
-    left: 30px;
-    top: 80px;
-    right: 30px;
-    bottom: 125px;
-    background: white;
-    -moz-box-shadow: 0 5px 25px #333;
-    -webkit-box-shadow: 0 5px 25px #333;
-    box-shadow: 0 5px 25px #333;
-}
-    .judul {
-      margin-top: -40px;
-      margin-left: 30px;
-      color: #FFFFFB;
-      font-size: 50px;
-      font-family: 'Arial', cursive;
-    }
-    .description {
-      position: absolute;
-      bottom: 0px;
-      right: 40px;
-      width: 500px;
-      height: 80px;
-      font-size: 18px;
-      color: white;
-    }
-    #share-box{
-    position: absolute;
-    left: 30px;
-    bottom: 40px;
-    width: 650px;
-    height: 56px;
-    }
-    #share-features {
-        height: 35px;
-    }
-
-  </style>
+ 
 </head>
 
 <body onload="init()">
@@ -120,24 +49,23 @@
                     <textarea id="url" rows="1" cols="30"></textarea>
                   </div>
                 </td>
-                
               </tr>
-              
-            </tbody></table>
+            </tbody>
+          </table>
           </div>
         </div>
-            <div class="description">Notee adalah web-based text editor yang berguna untuk menyimpan catatan dan berbagi secara real-time dengan orang lain.</div>
+        <div class="description">Notee adalah web-based text editor yang berguna untuk menyimpan catatan dan berbagi secara real-time dengan orang lain.</div>
   <script>
     function init() {
       //// Initialize Firebase.
       //// TODO: replace with your Firebase project configuration.
       var config = {
-        apiKey: "AIzaSyBxovfgUyLTjTBVcgh1rk0N2x_1m3Am8Ak",
-        authDomain: "cobafirebaseweb.firebaseapp.com",
-        databaseURL: "https://cobafirebaseweb.firebaseio.com",
-        projectId: "cobafirebaseweb",
-        storageBucket: "cobafirebaseweb.appspot.com",
-        messagingSenderId: "901890414128"
+        apiKey: "AIzaSyCqZIMBxx1t_JTWiS2-3Q0ArYkL2_sEuBE",
+        authDomain: "notee-12ad5.firebaseapp.com",
+        databaseURL: "https://notee-12ad5.firebaseio.com",
+        projectId: "notee-12ad5",
+        storageBucket: "",
+        messagingSenderId: "663303505150"
       };
       firebase.initializeApp(config);
 
@@ -161,7 +89,7 @@
       //// Initialize contents.
       firepad.on('ready', function() {
         if (firepad.isHistoryEmpty()) {
-          firepad.setText('Catat..');
+          firepad.setText('Take a note...');
         }
       });
 

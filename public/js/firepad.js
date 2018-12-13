@@ -42,7 +42,7 @@ firepad.Firepad = (function(global) {
     editorWrapper.parentNode.replaceChild(this.firepadWrapper_, editorWrapper);
     this.firepadWrapper_.appendChild(editorWrapper);
 
-    // Don't allow drag/drop because it causes issues.  See https://github.com/firebase/firepad/issues/36
+    // Stop drag n place
     utils.on(editorWrapper, 'dragstart', utils.stopEvent);
 
     // Provide an easy way to get the firepad instance associated with this CodeMirror instance.

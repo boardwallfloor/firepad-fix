@@ -360,3 +360,73 @@ a.firepad-btn:active {
   width: 50%;
   border: 3px solid #8AC007;
 }
+input[type=button] {
+    background-color: #FF6B6C;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+    html { height: 100%; }
+    body { margin: 0; height: 100%;
+      background-color: #FFC145;
+      background-image: url('https://www.firepad.io/images/pixelbg.png');
+    }
+    /* Height / width / positioning can be customized for your use case.
+       For demo purposes, we make the user list 175px and firepad fill the rest of the page. */
+    #userlist {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    width: 175px;
+    background-color: #B8B8D1;
+    }
+    #firepad {
+      position: absolute; left: 175px; top: 0; bottom: 0; right: 0; height: auto;
+    }
+    .kontener {
+    
+    position: absolute;
+    left: 30px;
+    top: 80px;
+    right: 30px;
+    bottom: 125px;
+    background: white;
+    -moz-box-shadow: 0 5px 25px #333;
+    -webkit-box-shadow: 0 5px 25px #333;
+    box-shadow: 0 5px 25px #333;
+}
+    .judul {
+      margin-top: -40px;
+      margin-left: 30px;
+      color: #FFFFFB;
+      font-size: 50px;
+      font-family: 'Arial', cursive;
+    }
+    .description {
+      position: absolute;
+      bottom: 0px;
+      right: 40px;
+      width: 500px;
+      height: 80px;
+      font-size: 18px;
+      color: #FFFFFB;
+    }
+    #share-box{
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    width: 650px;
+    height: 56px;
+    }
+    #share-features {
+        height: 35px;
+    }
+
