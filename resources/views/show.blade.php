@@ -60,7 +60,7 @@
       //// Initialize Firebase.
       //// TODO: replace with your Firebase project configuration.
       var config = {
-        apiKey: "AIzaSyCqZIMBxx1t_JTWiS2-3Q0ArYkL2_sEuBE",
+        apiKey: "<yours>",
         authDomain: "<insertyours>.firebaseapp.com",
         databaseURL: "<yours>.firebaseio.com",
         projectId: "<yours>",
