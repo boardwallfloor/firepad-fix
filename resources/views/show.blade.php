@@ -61,11 +61,11 @@
       //// TODO: replace with your Firebase project configuration.
       var config = {
         apiKey: "AIzaSyCqZIMBxx1t_JTWiS2-3Q0ArYkL2_sEuBE",
-        authDomain: "notee-12ad5.firebaseapp.com",
-        databaseURL: "https://notee-12ad5.firebaseio.com",
-        projectId: "notee-12ad5",
+        authDomain: "<insertyours>.firebaseapp.com",
+        databaseURL: "<yours>.firebaseio.com",
+        projectId: "<yours>",
         storageBucket: "",
-        messagingSenderId: "663303505150"
+        messagingSenderId: "<yours>"
       };
       firebase.initializeApp(config);
 
